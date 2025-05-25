@@ -189,7 +189,7 @@ jobs:
           mkdir release
           gh release download "$TAG" \
             --repo ${{ github.repository }} \
-            --pattern "nerdlog_*_linux_amd64.tar.gz" \
+            --pattern "${{ github.event.repository.name }}_*_linux_amd64.tar.gz" \
             --dir release
 
       - name: Extract archive
@@ -240,7 +240,7 @@ jobs:
           mkdir release
           gh release download "$TAG" \
             --repo ${{ github.repository }} \
-            --pattern "nerdlog_*_darwin_amd64.tar.gz" \
+            --pattern "${{ github.event.repository.name }}_*_darwin_amd64.tar.gz" \
             --dir release
 
       - name: Extract archive
@@ -292,7 +292,7 @@ jobs:
             export GH_TOKEN="${{ secrets.GITHUB_TOKEN }}"
             gh release download "$TAG" \
               --repo ${{ github.repository }} \
-              --pattern "nerdlog_*_freebsd_amd64.tar.gz" \
+              --pattern "${{ github.event.repository.name }}_*_freebsd_amd64.tar.gz" \
               --dir release
 
             echo "--- Extracting archive"
