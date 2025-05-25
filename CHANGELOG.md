@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.2](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.1...v1.9.2) (2025-05-25)
+
+
+### Bug Fixes
+
+* **tmp:** use -testing ([30b171e](https://github.com/dimonomid/nerdlog-testing/commit/30b171e680f3ce3c75143e8fbbf2dd9e6ecb7444))
+
 ## [1.9.1](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.0...v1.9.1) (2025-05-25)
 
 
