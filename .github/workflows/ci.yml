@@ -197,7 +197,62 @@ jobs:
           mkdir extracted
           tar -xzf release/*.tar.gz -C extracted
 
-      - name: Run Linux tests
+      - name: Run end-to-end tests
+        run: |
+          echo "--- Listing all"
+          ls
+
+          echo "--- Listing extracted"
+          ls ./extracted
+          mv ./extracted/nerdlog-testing ./extracted/nerdlog
+
+          echo "--- Listing extracted again"
+          ls ./extracted
+
+          echo "--- Running version"
+          ./extracted/nerdlog --version
+
+          echo "--- Running e2e tests"
+          NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/nerdlog" make test ARGS='-run TestE2EScenarios'
+
+  postrelease-test-macos:
+    needs: goreleaser
+    runs-on: macos-latest
+    env:
+      TAG: ${{ needs.release-please.outputs.tag_name }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Install deps
+        run: |
+          brew update
+          brew install gawk tmux
+
+      - name: Install GitHub CLI
+        run: |
+          brew install gh
+
+      - name: Download MacOS release archive
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir release
+          gh release download "$TAG" \
+            --repo ${{ github.repository }} \
+            --pattern "nerdlog_*_darwin_amd64.tar.gz" \
+            --dir release
+
+      - name: Extract archive
+        run: |
+          mkdir extracted
+          tar -xzf release/*.tar.gz -C extracted
+
+      - name: Run end-to-end tests
         run: |
           echo "--- Listing all"
           ls
