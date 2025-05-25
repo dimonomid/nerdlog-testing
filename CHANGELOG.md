@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.3](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.2...v1.9.3) (2025-05-25)
+
+
+### Bug Fixes
+
+* **CI:** Try to run e2e tests ([181e79c](https://github.com/dimonomid/nerdlog-testing/commit/181e79c80a05a87173f43675cd9e1b2278fdd941))
+
 ## [1.9.2](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.1...v1.9.2) (2025-05-25)
 
 
