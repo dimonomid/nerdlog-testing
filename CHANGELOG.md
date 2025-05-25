@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.6](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.5...v1.9.6) (2025-05-25)
+
+
+### Bug Fixes
+
+* **CI:** impl for freebsd ([6462ee8](https://github.com/dimonomid/nerdlog-testing/commit/6462ee8aa2557dbfe5c165f84c56e9932851fbaf))
+
 ## [1.9.5](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.4...v1.9.5) (2025-05-25)
 
 
