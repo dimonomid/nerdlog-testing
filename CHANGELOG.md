@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.8](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.7...v1.9.8) (2025-05-25)
+
+
+### Bug Fixes
+
+* **CI:** finalize stuff ([2626a52](https://github.com/dimonomid/nerdlog-testing/commit/2626a520aa7f0a2db8f834adc4fc276026374281))
+
 ## [1.9.7](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.6...v1.9.7) (2025-05-25)
 
 
