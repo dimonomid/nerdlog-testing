@@ -199,14 +199,13 @@ jobs:
 
       - name: Run end-to-end tests
         run: |
+          # TODO: remove this
+          mv ./extracted/nerdlog-testing ./extracted/nerdlog
+
           echo "--- Listing all"
           ls
 
           echo "--- Listing extracted"
-          ls ./extracted
-          mv ./extracted/nerdlog-testing ./extracted/nerdlog
-
-          echo "--- Listing extracted again"
           ls ./extracted
 
           echo "--- Running version"
@@ -254,14 +253,13 @@ jobs:
 
       - name: Run end-to-end tests
         run: |
+          # TODO: remove this
+          mv ./extracted/nerdlog-testing ./extracted/nerdlog
+
           echo "--- Listing all"
           ls
 
           echo "--- Listing extracted"
-          ls ./extracted
-          mv ./extracted/nerdlog-testing ./extracted/nerdlog
-
-          echo "--- Listing extracted again"
           ls ./extracted
 
           echo "--- Running version"

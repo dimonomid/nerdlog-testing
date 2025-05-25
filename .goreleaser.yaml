@@ -12,7 +12,7 @@ builds:
       #- freebsd
       - linux
       #- windows
-      #- darwin
+      - darwin
     main: ./cmd/nerdlog
     ldflags:
       - '-s -w'
