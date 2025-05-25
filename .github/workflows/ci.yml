@@ -192,5 +192,8 @@ jobs:
 
       - name: Run Linux tests
         run: |
+          ls ./extracted
+          mv ./extracted/nerdlog-testing ./extracted/nerdlog
+          ls ./extracted
           ./extracted/nerdlog --version
           # Add more test commands here
