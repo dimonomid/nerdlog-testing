@@ -199,9 +199,6 @@ jobs:
 
       - name: Run end-to-end tests
         run: |
-          # TODO: remove this
-          mv ./extracted/nerdlog-testing ./extracted/nerdlog
-
           echo "--- Listing all"
           ls
 
@@ -209,10 +206,10 @@ jobs:
           ls ./extracted
 
           echo "--- Running version"
-          ./extracted/nerdlog --version
+          ./extracted/${{ github.event.repository.name }} --version
 
           echo "--- Running e2e tests"
-          NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/nerdlog" make test ARGS='-run TestE2EScenarios'
+          NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/${{ github.event.repository.name }}" make test ARGS='-run TestE2EScenarios'
 
   postrelease-test-macos:
     needs: goreleaser
@@ -253,9 +250,6 @@ jobs:
 
       - name: Run end-to-end tests
         run: |
-          # TODO: remove this
-          mv ./extracted/nerdlog-testing ./extracted/nerdlog
-
           echo "--- Listing all"
           ls
 
@@ -263,10 +257,10 @@ jobs:
           ls ./extracted
 
           echo "--- Running version"
-          ./extracted/nerdlog --version
+          ./extracted/${{ github.event.repository.name }} --version
 
           echo "--- Running e2e tests"
-          NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/nerdlog" make test ARGS='-run TestE2EScenarios'
+          NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/${{ github.event.repository.name }}" make test ARGS='-run TestE2EScenarios'
 
   postrelease-test-freebsd:
     needs: goreleaser
@@ -291,9 +285,6 @@ jobs:
             # Workaround for git safety checks
             git config --global --add safe.directory "${PWD}"
 
-            echo "--- Installing GitHub CLI"
-            pkg install -y gh
-
             echo "--- Creating release dir"
             mkdir release
 
@@ -315,7 +306,7 @@ jobs:
             ls ./extracted
 
             echo "--- Running version"
-            ./extracted/nerdlog --version
+            ./extracted/${{ github.event.repository.name }} --version
 
             echo "--- Running e2e tests"
-            NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/nerdlog" make test ARGS='-run TestE2EScenarios'
+            NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/${{ github.event.repository.name }}" make test ARGS='-run TestE2EScenarios'
