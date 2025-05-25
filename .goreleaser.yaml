@@ -9,7 +9,7 @@ before:
 
 builds:
   - goos:
-      #- freebsd
+      - freebsd
       - linux
       #- windows
       - darwin

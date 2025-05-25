@@ -267,3 +267,55 @@ jobs:
 
           echo "--- Running e2e tests"
           NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/nerdlog" make test ARGS='-run TestE2EScenarios'
+
+  postrelease-test-freebsd:
+    needs: goreleaser
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ needs.release-please.outputs.tag_name }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run e2e tests in FreeBSD VM
+        uses: vmactions/freebsd-vm@v1
+        with:
+          usesh: true
+          prepare: |
+            pkg install -y go git bash gawk tmux
+            pkg install -y gh
+
+          run: |
+            set -e
+
+            # Workaround for git safety checks
+            git config --global --add safe.directory "${PWD}"
+
+            echo "--- Installing GitHub CLI"
+            pkg install -y gh
+
+            echo "--- Creating release dir"
+            mkdir release
+
+            echo "--- Downloading release archive"
+            export GH_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+            gh release download "$TAG" \
+              --repo ${{ github.repository }} \
+              --pattern "nerdlog_*_freebsd_amd64.tar.gz" \
+              --dir release
+
+            echo "--- Extracting archive"
+            mkdir extracted
+            tar -xzf release/*.tar.gz -C extracted
+
+            echo "--- Listing all"
+            ls
+
+            echo "--- Listing extracted"
+            ls ./extracted
+
+            echo "--- Running version"
+            ./extracted/nerdlog --version
+
+            echo "--- Running e2e tests"
+            NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/nerdlog" make test ARGS='-run TestE2EScenarios'
