@@ -165,3 +165,32 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: goreleaser release --release-notes CHANGELOG.md --clean
+
+  postrelease-test-ubuntu:
+    needs: goreleaser
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ needs.release-please.outputs.tag_name }}
+    steps:
+      - name: Install GitHub CLI
+        run: sudo apt install -y gh
+
+      - name: Download Linux release archive
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir release
+          gh release download "$TAG" \
+            --repo ${{ github.repository }} \
+            --pattern "nerdlog_*_linux_amd64.tar.gz" \
+            --dir release
+
+      - name: Extract archive
+        run: |
+          mkdir extracted
+          tar -xzf release/*.tar.gz -C extracted
+
+      - name: Run Linux tests
+        run: |
+          ./extracted/nerdlog --version
+          # Add more test commands here
