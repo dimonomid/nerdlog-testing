@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [1.9.0](https://github.com/dimonomid/nerdlog-testing/compare/v1.8.1...v1.9.0) (2025-05-25)
+
+
+### Features
+
+* Add flags for lstreams config and history files ([ea160d8](https://github.com/dimonomid/nerdlog-testing/commit/ea160d84a64c32e908221e9acc6a8a4d3b72276a))
+* **CI:** implement post-release checks ([f4b4d2c](https://github.com/dimonomid/nerdlog-testing/commit/f4b4d2c1a49b8d036ac22e8b979b4df6f3b23c3e))
+
+
+### Bug Fixes
+
+* Don't use [[  ]] in main ssh session ([d8b5af0](https://github.com/dimonomid/nerdlog-testing/commit/d8b5af0eff05d7cf3cfaff7c4d86cb9bc91b0a80))
+
 ## [1.8.1](https://github.com/dimonomid/nerdlog/compare/v1.8.0...v1.8.1) (2025-05-20)
 
 
