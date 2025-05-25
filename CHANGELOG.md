@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.5](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.4...v1.9.5) (2025-05-25)
+
+
+### Bug Fixes
+
+* **CI:** build for macos ([5143fa4](https://github.com/dimonomid/nerdlog-testing/commit/5143fa4c29a1b79466052467e0c91b57714aa057))
+
 ## [1.9.4](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.3...v1.9.4) (2025-05-25)
 
 
