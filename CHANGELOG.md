@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.1](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.0...v1.9.1) (2025-05-25)
+
+
+### Bug Fixes
+
+* **tmp:** use nerdlog as project name ([caeede6](https://github.com/dimonomid/nerdlog-testing/commit/caeede609ca77eec354df8c84e061797a9b345fe))
+
 ## [1.9.0](https://github.com/dimonomid/nerdlog-testing/compare/v1.8.1...v1.9.0) (2025-05-25)
 
 
