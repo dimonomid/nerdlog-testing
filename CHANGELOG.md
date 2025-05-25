@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.4](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.3...v1.9.4) (2025-05-25)
+
+
+### Bug Fixes
+
+* **CI:** run e2e tests on macos ([30aec81](https://github.com/dimonomid/nerdlog-testing/commit/30aec81d7e4ff1c9c916b3e59baed0d9c446a283))
+
 ## [1.9.3](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.2...v1.9.3) (2025-05-25)
 
 
