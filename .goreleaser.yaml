@@ -9,10 +9,10 @@ before:
 
 builds:
   - goos:
-      - freebsd
+      #- freebsd
       - linux
-      - windows
-      - darwin
+      #- windows
+      #- darwin
     main: ./cmd/nerdlog
     ldflags:
       - '-s -w'

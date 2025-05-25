@@ -172,6 +172,13 @@ jobs:
     env:
       TAG: ${{ needs.release-please.outputs.tag_name }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
       - name: Install GitHub CLI
         run: sudo apt install -y gh
 
@@ -192,8 +199,18 @@ jobs:
 
       - name: Run Linux tests
         run: |
+          echo "--- Listing all"
+          ls
+
+          echo "--- Listing extracted"
           ls ./extracted
           mv ./extracted/nerdlog-testing ./extracted/nerdlog
+
+          echo "--- Listing extracted again"
           ls ./extracted
+
+          echo "--- Running version"
           ./extracted/nerdlog --version
-          # Add more test commands here
+
+          echo "--- Running e2e tests"
+          NERDLOG_E2E_TEST_NERDLOG_BINARY="${PWD}/extracted/nerdlog" make test ARGS='-run TestE2EScenarios'
