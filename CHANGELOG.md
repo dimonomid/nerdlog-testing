@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.9.1](https://github.com/dimonomid/nerdlog-testing/compare/v1.9.0...v1.9.1) (2025-06-07)
+
+
+### Bug Fixes
+
+* Some critical fix ([5617fe1](https://github.com/dimonomid/nerdlog-testing/commit/5617fe11b4747c0ad72951ba88595e598999feec))
+
 ## [1.9.0](https://github.com/dimonomid/nerdlog/compare/v1.8.2...v1.9.0) (2025-06-02)
 
 
