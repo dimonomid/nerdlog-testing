@@ -1,6 +1,23 @@
 # Changelog
 
 
+## [1.9.0](https://github.com/dimonomid/nerdlog-testing/compare/v1.8.1...v1.9.0) (2025-06-07)
+
+
+### Features
+
+* Add flags for lstreams config and history files ([ea160d8](https://github.com/dimonomid/nerdlog-testing/commit/ea160d84a64c32e908221e9acc6a8a4d3b72276a))
+* Add some basic support for Apache logs ([19a442e](https://github.com/dimonomid/nerdlog-testing/commit/19a442e5b3ee651c8bf6913dcbd2298d0e7ce5c7))
+* Add support for --set command line flag ([ecae528](https://github.com/dimonomid/nerdlog-testing/commit/ecae528355ae11bc83796f323f561409263c8585))
+
+
+### Bug Fixes
+
+* Don't use [[  ]] in main ssh session ([d8b5af0](https://github.com/dimonomid/nerdlog-testing/commit/d8b5af0eff05d7cf3cfaff7c4d86cb9bc91b0a80))
+* Fix going from May to Jun in traditional syslog format ([de21e4d](https://github.com/dimonomid/nerdlog-testing/commit/de21e4dc2bc299acda719896106e2cb48920eb4b))
+* Improve error message when initial query is invalid ([dc9e5fc](https://github.com/dimonomid/nerdlog-testing/commit/dc9e5fc8e0f5d7e8010743c8e98307cc6642d146))
+* Update tview to the same version as in current Debian ([7dce1ff](https://github.com/dimonomid/nerdlog-testing/commit/7dce1ffdc3d1a724eac15f93d598f30092cd756d))
+
 ## [1.9.0](https://github.com/dimonomid/nerdlog/compare/v1.8.2...v1.9.0) (2025-06-02)
 
 
